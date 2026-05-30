@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - MovieBook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/movies.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <span>MovieBook</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="movies.html" class="nav-link active">
+                        <i class="fas fa-film"></i> Movies
+                    </a>
+                    <div id="userSection">
+                        <a href="login.html" class="nav-link login-btn">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1><i class="fas fa-film"></i> Movies</h1>
+                <p>Discover and book tickets for the latest movies</p>
+            </div>
+
+            <!-- Movie Filters -->
+            <div class="movie-filters">
+                <button class="filter-btn active" data-filter="now_showing">
+                    <i class="fas fa-play"></i> Now Showing
+                </button>
+                <button class="filter-btn" data-filter="coming_soon">
+                    <i class="fas fa-clock"></i> Coming Soon
+                </button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="moviesLoading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading amazing movies for you...</p>
+            </div>
+
+            <!-- Movies Grid -->
+            <div id="moviesGrid" class="movies-grid" style="display: none;">
+                <!-- Movies will be loaded here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <i class="fas fa-film"></i>
+                <h3>No movies found</h3>
+                <p>Check back later for new releases!</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/movies.js"></script>
+</body>
+</html>

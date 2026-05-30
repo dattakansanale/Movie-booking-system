@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - MovieBook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <span>MovieBook</span>
+                </div>
+                <div class="nav-links">
+                    <a href="movies.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i> Back to Movies
+                    </a>
+                    <div id="userSection">
+                        <!-- User info will be loaded here -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Movie Info -->
+            <div id="movieInfo" class="movie-info">
+                <!-- Movie details will be loaded here -->
+            </div>
+
+            <!-- Booking Steps -->
+            <div class="booking-steps">
+                <!-- Step 1: Date Selection -->
+                <div class="booking-step active" id="dateStep">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3><i class="fas fa-calendar-alt"></i> Select Date</h3>
+                    </div>
+                    <div class="step-content">
+                        <input type="date" id="bookingDate" class="date-input">
+                    </div>
+                </div>
+
+                <!-- Step 2: Showtime Selection -->
+                <div class="booking-step" id="showtimeStep">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3><i class="fas fa-clock"></i> Select Showtime</h3>
+                    </div>
+                    <div class="step-content">
+                        <div id="showtimesList" class="showtimes-grid">
+                            <!-- Showtimes will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Seat Selection -->
+                <div class="booking-step" id="seatStep">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h3><i class="fas fa-chair"></i> Select Seats</h3>
+                    </div>
+                    <div class="step-content">
+                        <div class="seat-selection">
+                            <div class="seat-legend">
+                                <div class="legend-item">
+                                    <div class="seat-demo available"></div>
+                                    <span>Available</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="seat-demo selected"></div>
+                                    <span>Selected</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="seat-demo booked"></div>
+                                    <span>Booked</span>
+                                </div>
+                            </div>
+                            
+                            <div class="screen">
+                                <i class="fas fa-tv"></i> SCREEN
+                            </div>
+                            
+                            <div id="seatMap" class="seat-map">
+                                <!-- Seats will be loaded here -->
+                            </div>
+                            
+                            <div class="pricing-info">
+                                <div class="price-item regular">
+                                    <i class="fas fa-chair"></i>
+                                    <span>Regular: $<span id="regularPrice">15</span></span>
+                                </div>
+                                <div class="price-item premium">
+                                    <i class="fas fa-star"></i>
+                                    <span>Premium: $<span id="premiumPrice">22.50</span></span>
+                                </div>
+                                <div class="price-item vip">
+                                    <i class="fas fa-crown"></i>
+                                    <span>VIP: $<span id="vipPrice">30</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Booking Summary -->
+                <div class="booking-step" id="summaryStep">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <h3><i class="fas fa-credit-card"></i> Booking Summary</h3>
+                    </div>
+                    <div class="step-content">
+                        <div id="bookingSummary" class="booking-summary">
+                            <!-- Summary will be loaded here -->
+                        </div>
+                        <div class="booking-actions">
+                            <button id="confirmBooking" class="btn btn-primary btn-full">
+                                <span class="btn-text">
+                                    <i class="fas fa-credit-card"></i> Confirm Booking
+                                </span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Processing...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
