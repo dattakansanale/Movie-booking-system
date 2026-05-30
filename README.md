@@ -110,6 +110,8 @@ showtimes → bookings
 bookings → booking_seats
 seats → booking_seats
 ER Diagram
+
+
 7. Frontend Behavior
 Static pages render the UI and layout
 JavaScript handles:
@@ -121,6 +123,8 @@ seat selection and confirmation
 index.html is the landing page
 login.html and register.html handle auth
 UI updates are driven by client-side JS and token state
+
+
 8. Key Notes
 The backend is a REST API + static file server
 Booking operations are transactional
